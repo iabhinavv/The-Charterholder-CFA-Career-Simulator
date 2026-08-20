@@ -28,8 +28,14 @@ doesn't stick, use the server option above.)
 | File | Purpose |
 |------|---------|
 | `index.html` | The whole game — engine, finance-terminal UI, charts. Vanilla JS, no dependencies. |
-| `content.js` | The scenario bank + Charterpedia concept cards. **This is where content lives.** |
+| `content.js` | The 24 story/anchor scenarios (+ 2 crises) and their Charterpedia cards. |
+| `content-l1.js` | 100 Level I drill questions (~10 per subject). |
+| `content-l2.js` | 50 Level II drill questions (5 per subject). |
+| `content-l3.js` | 50 Level III drill questions. |
 | `serve.py`  | Optional tiny static server for local play. |
+
+All four content files push into the same shared scenario bank. Drills interleave into the
+campaign **by subject** and are browsable subject-wise in Free Play.
 
 ## Modes
 
@@ -59,7 +65,14 @@ The player calculates; the engine never does math — it only checks the chosen 
 the authored answer key and shows your pre-written solution. Keep every number and answer
 correct in the content.
 
-## Status (v1)
+## Status
 
-Full engine + both modes + 26 scenarios (16 Level I, 4 Level II, 4 Level III, 2 crises).
-Designed to grow act-by-act toward full coverage of all 10 CFA topic areas × 3 levels.
+Full engine + both modes + **226 scenarios**: 24 story/anchor scenarios and 2 crises, plus
+**200 curriculum drills** — 100 at Level I (~10 per subject), 50 at Level II (5 per subject),
+and 50 at Level III (Asset Allocation, Private Wealth, Portfolio Construction, Performance,
+Behavioral, and the rest). Drills interleave into the campaign by subject and power Free
+Play's subject-wise drilling.
+
+The campaign is deliberately long now (Act I alone runs ~116 scenarios); progress auto-saves,
+so you can play it across sessions, and Free Play is the quick path for drilling a single
+subject.
